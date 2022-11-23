@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today We Will Learn Promises ANd Asyn Await And Much More</h1>
+    <script>
+        console.log("Start");
+        setTimeout(()=>{
+            console.log("Inside Set Timeout")
+        },2000)
+        console.log("End");
+
+        const promiseObj1=new Promise((resolve,rejected)=>{
+            let req=false;
+            if(req==true){
+                resolve("Return Success");
+            }else{
+                rejected("Request rejected");
+            }
+        });
+
+        promiseObj1.then(
+            (value)=>console.log(value),
+            (error)=>console.log(error)
+        )
+    </script>
+</body>
+</html>
