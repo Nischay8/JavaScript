@@ -1,6 +1,6 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
-
+let logEntries = [];
 
 function CreateAndWriteOutput(operator, resultBeforeCal, calcNumber) {
     const calcDescription = `${resultBeforeCal} ${operator} ${calcNumber}`;
@@ -18,6 +18,8 @@ function add() {
     const calcDescription = `${currentResult} + ${enteredNumber}`;
     currentResult = currentResult + parseInt(userInput.value);
     CreateAndWriteOutput('+', initialNumber, enteredNumber);
+    logEntries.push(enteredNumber);
+    console.log(logEntries);
 }
 
 
