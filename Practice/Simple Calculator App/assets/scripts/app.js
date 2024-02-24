@@ -8,7 +8,7 @@ function CreateAndWriteOutput(operator, resultBeforeCal, calcNumber) {
 }
 
 function getUserNumberInput() {
-    return parseInt(userInput.value);
+    return userInput.value;
 }
 
 

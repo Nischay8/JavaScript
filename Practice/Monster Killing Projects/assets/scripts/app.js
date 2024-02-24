@@ -11,20 +11,31 @@ const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
-const enteredValue = prompt('Maximum life for you and the monster.', '100');
 
-let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
+function getMaxLifeValues() {
+    const enteredValue = prompt('Maximum life for you and the monster.', '100');
 
-if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
-    chosenMaxLife = 100;
+    let parsedValue = parseInt(enteredValue);
+    if(isNaN(parsedValue)|| parsedValue<=0){
+        throw{
+            message:'Please Entered a Valid Number Nischay'
+        };
+    }
+    return parsedValue;
 }
+
+let chosenMaxLife=getMaxLifeValues();
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
+
+
+
+
 
 function writeToLog(ev, val, monsterHealth, playerHealth) {
     let logEntry = {
