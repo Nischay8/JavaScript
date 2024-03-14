@@ -65,3 +65,13 @@ startGameBtn.addEventListener('click', function () {
   }
   alert(message);
 })
+
+
+
+// Not Related To Game
+
+
+
+
+// sumUp(1,5,10,-3,6,10);
+// sumUp(1,5,10,-3,6,10,25,88);

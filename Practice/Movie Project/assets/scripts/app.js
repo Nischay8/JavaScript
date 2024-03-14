@@ -90,6 +90,7 @@ const addMovieHandler = () => {
 
     movies.push(newMovies);
     console.log(movies);
+    console.log(typeof(movies));
     renderNewMovieElement(newMovies.id, newMovies.title, newMovies.image, newMovies.rating);
     toggleMovieModal();
     clearMovieInputs();
