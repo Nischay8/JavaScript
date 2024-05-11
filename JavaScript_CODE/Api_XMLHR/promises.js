@@ -65,9 +65,42 @@
 //     console.log(e);
 // })
 
-const promiseFive = new Promise(function (resolve, reject) {
+// const promiseFive = new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//         let Error = true
+//         if (!Error) {
+//             resolve({
+//                 userName: "Nischay Sinha",
+//                 Email: "nischey.me008@gmail.com",
 
-});
+//             })
+//         } else {
+//             reject("Wrong Data Is Given");
+//         }
+//     }, 1000)
+// });
 
 
-promiseFive.then
+// async function consumePromiseFive() {
+//     try {
+//         const repsone = await promiseFive;
+//         console.log(repsone);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// consumePromiseFive();
+
+
+async function getAllUsers() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+
+        const data = await response.json();
+        console.log(data[1]['name']);
+    } catch (error) {
+        console.log("E:", error);
+    }
+}
+getAllUsers()
