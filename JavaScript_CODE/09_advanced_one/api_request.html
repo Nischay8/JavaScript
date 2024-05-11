@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+</head>
+
+<body>
+    <script>
+        const requestURL = 'https://api.github.com/users/Nischay8';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL);
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const Data =JSON.parse(this.responseText);
+
+                console.log(Data.follower);
+            }
+        }
+
+        xhr.send();
+
+
+
+    </script>
+</body>
+
+</html>
